@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  height: 100vh; /* Ensure the app takes the full height of the viewport */
+}
+
+.user-list {
+  flex: 0 0 300px; /* Fix the width to 300px */
+  margin-right: 20px;
+  border-right: 1px solid #ccc;
+  overflow-y: auto; /* Allow scrolling if the list is too long */
+}
+
+.user-list h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+.selectuser{
+  font-size: 20px;
+  margin-top: 20px;
+}
+.user-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.user-item:hover {
+  background-color: #f0f0f0;
+}
+
+.user-item.selected {
+  border-color: #000;
+  background-color: #e0e0e0;
+}
+
+.user-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info {
+  flex: 1;
+  margin-left: 8px;
+}
+
+.user-name {
+  font-weight: bold;
+  margin: 0;
+}
+.user-location{
+  font-size:14px;
+}
+
+.user-job,
+.user-location {
+  margin: 0;
+  color: #666;
+}
+
+.user-details {
+  flex: 1;
+ /* Allow the details section to take up remaining space */
+  padding: 20px;
+  overflow-y: auto; /* Allow scrolling if the details content is too long */
+}
+
+.user-details-content {
+  animation: fadeIn 0.3s ease-in-out;
+  
+}
+.user-details-content h2,p{
+  margin-bottom: 5px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.user-details img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.clear-selection {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 7px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 35px;
+  transition: background-color 0.3s;
+}
+
+.clear-selection:hover {
+  background-color: #0056b3;
+}
+
+.loader {
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .user-list {
+    max-width: none;
+    margin-right: 0;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
